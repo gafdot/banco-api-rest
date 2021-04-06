@@ -10,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Cliente {
@@ -18,11 +19,12 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
-	private ArrayList<String> contas = new ArrayList<String>();
+	@OneToMany(mappedBy = "cliente")
+	private List<Conta> contas = new ArrayList<Conta>();
 	private String endereco;
 	private String cpf;
 	@Enumerated(EnumType.STRING)
-	private Status status = Status.Padrão;
+	private StatusCliente status = StatusCliente.Padrão;
 	private LocalDateTime dataDeCriacao = LocalDateTime.now();
 
 	public Long getId() {
@@ -41,11 +43,11 @@ public class Cliente {
 		this.nome = nome;
 	}
 
-	public List<String> getContas() {
+	public List<Conta> getContas() {
 		return contas;
 	}
 
-	public void setContas(ArrayList<String> contas) {
+	public void setContas(List<Conta> contas) {
 		this.contas = contas;
 	}
 
@@ -65,11 +67,11 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
-	public Status getStatus() {
+	public StatusCliente getStatus() {
 		return status;
 	}
 
-	public void setStatus(Status status) {
+	public void setStatus(StatusCliente status) {
 		this.status = status;
 	}
 
