@@ -27,6 +27,15 @@ public class Cliente {
 	private StatusCliente status = StatusCliente.Padrão;
 	private LocalDateTime dataDeCriacao = LocalDateTime.now();
 
+	public Cliente(String nome, String endereco, String cpf) {
+		this.nome = nome;
+		this.endereco = endereco;
+		this.cpf = cpf;
+	}
+
+	public Cliente() {
+	}
+
 	public Long getId() {
 		return id;
 	}
