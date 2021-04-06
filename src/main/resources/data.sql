@@ -1,0 +1,1 @@
+insert into cliente (nome, endereco, cpf, status) values ('Alfredo', 'Rua dos Magalhães, n° 304', '123456789-12', 'Padrão');
