@@ -27,6 +27,9 @@ public class Conta {
 	private ArrayList<String> investimentos = new ArrayList<String>();
 	private ArrayList<String> emprestimos = new ArrayList<String>();
 
+	public Conta() {
+	}
+
 	public Long getId() {
 		return id;
 	}
