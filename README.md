@@ -1,2 +1,2 @@
 # banco-api-rest
-Concept project for a bank api using Spring Boot
+Concept project of an API for a bank using Spring Boot.
